@@ -22,7 +22,8 @@ const ItemDetail = ({ item, handleAddToCart }) => {
         <Col md={8}>
           <Card.Body>
             <Card.Title as="h1" className="mb-3">{item.title}</Card.Title>
-            <Card.Subtitle as="h2" className="mb-2 text-muted">{item.profesor}</Card.Subtitle>
+            <Card.Text className="text-muted">{item.description}</Card.Text>
+            <Card.Text className="text-muted">Profesor(a): {item.profesor}</Card.Text>
             <Card.Text className="text-muted">Categoría: {item.categoryid}</Card.Text>
             <Card.Text as="h4" className="text-primary">${item.price}</Card.Text>
 
