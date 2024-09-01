@@ -28,6 +28,7 @@ function App() {
         <Route path="/cart" element={<Cart />}>
           {" "}
         </Route>
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );

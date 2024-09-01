@@ -12,10 +12,9 @@ export const ItemProvider = ({ children }) => {
     setItems((prevItems) => [...prevItems, item]);
   };
 
-  console.log(items); // Para verificar que los ítems se están agregando correctamente
-
+  const reset = () => setItems([] );
   return (
-    <ItemContext.Provider value={{ items, addItem }}>
+    <ItemContext.Provider value={{ items, addItem, reset }}>
       {children}
     </ItemContext.Provider>
   );
