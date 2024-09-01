@@ -1,65 +1,100 @@
 [
   {
     "id": "01",
-    "titulo": "Lyrical Jazz Principiante",
-    "categoria": "Mensual",
-    "imagen": "../assets/img/imagenes/1.png",
+    "categoryid": "Mensuales",
+    "title": "Lyrical Jazz Principiante",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/1.png?alt=media&token=5554170b-b08e-499b-8ab2-738149c02b7d",
     "profesor": "Gabriel Gonzalez",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "El Lyrical Jazz es una mezcla fluida de jazz y ballet que permite a los bailarines expresar emociones profundas a través del movimiento. Esta clase de nivel principiante es ideal para aquellos que están empezando en el mundo del jazz y desean combinar la técnica con la emotividad."
   },
   {
     "id": "02",
-    "titulo": "Lyrical Jazz Básico",
-    "categoria": "Clase a Clase",
-    "imagen": "../assets/img/imagenes/2.png",
+    "categoryid": "Clase a Clase",
+    "title": "Lyrical Jazz Básico",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/2.png?alt=media&token=e1d3d6d7-5a61-4af8-893b-5fa411cac074",
     "profesor": "Constanza Labbe",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "Esta clase de Lyrical Jazz Básico es perfecta para aquellos con una base en danza que buscan explorar la combinación de la técnica del jazz con la expresión emocional del ballet. Los estudiantes trabajarán en la interpretación de la música y la conexión con su propio cuerpo."
   },
   {
     "id": "03",
-    "titulo": "Full Baile",
-    "categoria": "Clase a Clase",
-    "imagen": "../assets/img/imagenes/3.png",
+    "categoryid": "Clase a Clase",
+    "title": "Full Baile",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/3.png?alt=media&token=399580f7-b973-4129-9004-5295dec1a2b3",
     "profesor": "Hernan Merino",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "La clase 'Full Baile' está diseñada para aquellos que quieren experimentar una variedad de estilos de baile en una sola sesión. Desde ritmos latinos hasta técnicas modernas, esta clase ofrece una experiencia completa para el cuerpo y la mente."
   },
   {
     "id": "04",
-    "titulo": "Jazz Intermedio",
-    "categoria": "Clase a Clase",
-    "imagen": "../assets/img/imagenes/4.png",
+    "categoryid": "Clase a Clase",
+    "title": "Jazz Intermedio",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/4.png?alt=media&token=2ac3b1ef-4689-402d-94bc-5c9530b24129",
     "profesor": "Hernan Merino",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "La clase de Jazz Intermedio es para bailarines que ya tienen una base sólida en jazz y desean mejorar su técnica, flexibilidad y expresividad. Se enfoca en combinaciones más complejas y la interpretación de diferentes estilos musicales."
   },
   {
     "id": "05",
-    "titulo": "Jazz Senior",
-    "categoria": "Clase a Clase",
-    "imagen": "../assets/img/imagenes/5.png",
+    "categoryid": "Clase a Clase",
+    "title": "Jazz Senior",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/5.png?alt=media&token=688ccf1f-e861-4b87-8b21-0db0b0f79810",
     "profesor": "Hernan Merino",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "Diseñada para bailarines senior, esta clase de Jazz permite a los participantes mantener la forma física y disfrutar del baile a su propio ritmo. Con un enfoque en la técnica, pero con adaptaciones para mayor comodidad y disfrute."
   },
   {
     "id": "06",
-    "titulo": "Tap Básico",
-    "categoria": "Clase a Clase",
-    "imagen": "../assets/img/imagenes/6.png",
+    "categoryid": "Clase a Clase",
+    "title": "Tap Básico",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/6.png?alt=media&token=e2c1e9e8-3ed0-4db6-b6e0-1e1ea442060a",
     "profesor": "Josefa Canepa",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "El Tap Básico introduce a los estudiantes a los fundamentos de la danza tap. Aprenderás los movimientos básicos, las combinaciones y el ritmo, mientras desarrollas coordinación y musicalidad."
   },
   {
     "id": "07",
-    "titulo": "Salsa",
-    "categoria": "Clase a Clase",
-    "imagen": "../assets/img/imagenes/7.png",
+    "categoryid": "Mensuales",
+    "title": "Salsa",
+    "imageid": "https://firebasestorage.googleapis.com/v0/b/academia-de-danza-b3473.appspot.com/o/7.png?alt=media&token=036efd2a-b392-42f7-b623-7af2816526c6",
     "profesor": "Luisela Toledo",
-    "fechas": ["20/04/2024", "21/04/2024", "22/04/2024"],
-    "precio": 8000
+    "fechas": [
+      "20/04/2024",
+      "21/04/2024",
+      "22/04/2024"
+    ],
+    "price": 8000,
+    "description": "Sumérgete en los ritmos vibrantes de la Salsa en esta clase diseñada para todos los niveles. Aprenderás pasos básicos y movimientos de cadera mientras disfrutas de la energía y la alegría de la música latina."
   }
 ]

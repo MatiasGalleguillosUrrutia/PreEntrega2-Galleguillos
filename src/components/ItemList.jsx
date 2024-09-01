@@ -13,7 +13,7 @@ const ItemList = ({ items }) => {
             <Card.Title>{i.title}</Card.Title>
             <Card.Title>{i.profesor}</Card.Title>
             <Card.Text>{i.description}</Card.Text>
-            <Card.Text>{i.categoryid}</Card.Text>
+            Categoria:<Card.Text>{i.categoryid}</Card.Text>
             <Link to={`/item/${i.id}`}>
               <Button variant="primary">Ver</Button>
             </Link>

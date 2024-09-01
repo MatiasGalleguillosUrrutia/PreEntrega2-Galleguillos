@@ -1,12 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // componentes que funcionan con el patron children.
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
 import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
 import { Checkout } from "./components/Checkout";
-import {getFirestore, doc,getDoc} from "firebase/firestore";
-
+import UploadProductos from "./components/UploadProductos";
+import DeleteCollection from "./components/DeleteCollection"; // Importa el nuevo componente
 
 function App() {
   return (
@@ -14,22 +14,14 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<ItemListContainer />}>
-          {" "}
-        </Route>
-        <Route path="/categoria/:id" element={<ItemListContainer />}>
-          {" "}
-        </Route>
-        <Route path="/item/:id" element={<ItemDetailContainer />}>
-          {" "}
-        </Route>
-        <Route path="*" element={404}>
-          {" "}
-        </Route>
-        <Route path="/cart" element={<Cart />}>
-          {" "}
-        </Route>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/categoria/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="*" element={404} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/upload" element={<UploadProductos />} />
+        <Route path="/delete-collection" element={<DeleteCollection />} /> {/* Nueva ruta */}
       </Routes>
     </BrowserRouter>
   );
