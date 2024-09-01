@@ -33,8 +33,7 @@ export const NavBar = () => {
                 {category.name}
               </Nav.Link>
             ))}
-            <Nav.Link as={NavLink} to="/upload">Upload</Nav.Link>
-            <Nav.Link as={NavLink} to="/delete-collection">Delete</Nav.Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
