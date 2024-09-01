@@ -28,6 +28,7 @@ export const NavBar = () => {
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
+            <CartWidget />
           </Container>
         </Navbar>
       </div>
