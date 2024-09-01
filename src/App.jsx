@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"; // componentes 
 import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
+import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
 import {getFirestore, doc,getDoc} from "firebase/firestore";
 
@@ -22,6 +23,9 @@ function App() {
           {" "}
         </Route>
         <Route path="*" element={404}>
+          {" "}
+        </Route>
+        <Route path="/cart" element={<Cart />}>
           {" "}
         </Route>
       </Routes>

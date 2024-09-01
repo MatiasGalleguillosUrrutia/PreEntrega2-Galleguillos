@@ -1,13 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import ItemDetail from "./ItemDetail";
+import { ItemContext } from "../contexts/ItemContext"; // Asegúrate de que la ruta sea correcta
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+
+  const { addItem } = useContext(ItemContext);
+
+  const handleAddToCart = (fechaSeleccionada) => {
+    const itemWithDate = { ...item, fechaSeleccionada };
+    addItem(itemWithDate);
+  };
 
   useEffect(() => {
     const db = getFirestore();
@@ -27,7 +35,7 @@ export const ItemDetailContainer = () => {
 
   return (
     <Container className="container-fluid mt-4">
-      <ItemDetail item={item} /> 
+      <ItemDetail item={item} handleAddToCart={handleAddToCart} /> {/* Pasar la función para agregar al carrito */}
     </Container>
   );
 };

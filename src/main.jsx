@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { ItemProvider } from "./contexts/ItemContext"; // Importa el ItemProvider
 
 import App from "./App.jsx";
 import "./index.css";
@@ -21,6 +22,8 @@ initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <ItemProvider> {/* Envuelve tu aplicación con ItemProvider */}
+      <App />
+    </ItemProvider>
   </React.StrictMode>
 );

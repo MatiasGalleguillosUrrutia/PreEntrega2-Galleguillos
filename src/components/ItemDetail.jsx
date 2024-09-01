@@ -1,7 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import { Card, Button, Form, Row, Col } from "react-bootstrap";
 
-const ItemDetail = ({ item, addItem }) => {
+const ItemDetail = ({ item, handleAddToCart }) => {
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const handleDateChange = (e) => {
+    setSelectedDate(e.target.value);
+  };
+
   return (
     <Card className="mb-4">
       <Row className="g-0">
@@ -20,17 +26,23 @@ const ItemDetail = ({ item, addItem }) => {
             <Card.Text className="text-muted">Categoría: {item.categoryid}</Card.Text>
             <Card.Text as="h4" className="text-primary">${item.price}</Card.Text>
 
-            {/* Mostrar las fechas en un select más pequeño */}
             <Form.Group controlId="formFechas" className="mb-3">
               <Form.Label>Selecciona una fecha:</Form.Label>
-              <Form.Select className="form-control-sm"> {/* Clase para achicar el select */}
+              <Form.Select
+                className="form-control-sm"
+                value={selectedDate}
+                onChange={handleDateChange}
+              >
+                <option value="" disabled>Selecciona una fecha</option>
                 {item.fechas && item.fechas.map((fecha, index) => (
-                  <option key={index} value={fecha}>{fecha}</option>
+                  <option key={index} value={fecha}>
+                    {fecha}
+                  </option>
                 ))}
               </Form.Select>
             </Form.Group>
 
-            <Button variant="primary" onClick={() => addItem(item)}>
+            <Button variant="primary" onClick={() => handleAddToCart(selectedDate)}>
               Comprar
             </Button>
           </Card.Body>
