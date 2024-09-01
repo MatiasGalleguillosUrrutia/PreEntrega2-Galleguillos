@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ItemContext } from "../contexts/ItemContext";
 import { Card, Button, Row, Col, Container, Alert } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
   const { items, reset } = useContext(ItemContext);
@@ -49,6 +50,11 @@ export const Cart = () => {
               </Row>
             </Card>
           ))}
+          <Link to="/checkout">
+            <Button variant="success" className="mt-3">
+              Ir al Checkout
+            </Button>
+          </Link>
         </>
       ) : (
         <Alert variant="warning" className="text-center">

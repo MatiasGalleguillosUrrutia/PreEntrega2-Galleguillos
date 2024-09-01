@@ -4,6 +4,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { NavBar } from "./components/NavBar";
 import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
+import { Checkout } from "./components/Checkout";
 import {getFirestore, doc,getDoc} from "firebase/firestore";
 
 
