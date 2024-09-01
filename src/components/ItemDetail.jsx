@@ -3,9 +3,14 @@ import { Card, Button, Form, Row, Col } from "react-bootstrap";
 
 const ItemDetail = ({ item, handleAddToCart }) => {
   const [selectedDate, setSelectedDate] = useState("");
+  const [quantity, setQuantity] = useState(1); // Estado para manejar la cantidad seleccionada
 
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
+  };
+
+  const handleQuantityChange = (e) => {
+    setQuantity(parseInt(e.target.value, 10)); // Asegúrate de convertir el valor a un número entero
   };
 
   return (
@@ -43,7 +48,22 @@ const ItemDetail = ({ item, handleAddToCart }) => {
               </Form.Select>
             </Form.Group>
 
-            <Button variant="primary" onClick={() => handleAddToCart(selectedDate)}>
+            <Form.Group controlId="formCantidad" className="mb-3">
+              <Form.Label>Cantidad:</Form.Label>
+              <Form.Control
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={handleQuantityChange}
+                className="form-control-sm"
+              />
+            </Form.Group>
+
+            <Button 
+              variant="primary" 
+              onClick={() => handleAddToCart(selectedDate, quantity)}
+              disabled={!selectedDate || quantity < 1} // Deshabilita el botón si no se selecciona una fecha o cantidad es menor a 1
+            >
               Comprar
             </Button>
           </Card.Body>

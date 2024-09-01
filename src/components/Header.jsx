@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 
 export const Header = () => {
@@ -5,10 +6,12 @@ export const Header = () => {
     <div className="container-fluid mt-2">
       <div className="row p-3">
         <div className="col-md-3 d-flex flex-column align-items-center justify-content-center">
-          <h3 className="fs-4 fw-bold">Academia de danza</h3>
+        <Link to="/" className="fs-4 fw-bold" style={{ textDecoration: 'none', color: 'black' }}>
+            <h3 className="d-inline">Academia de danza</h3>
+          </Link>
         </div>
         <div className="col-md-1 d-flex align-items-center justify-content-end">
-          <a href="#" className="text-end">
+          <a  className="text-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -26,7 +29,7 @@ export const Header = () => {
           </p>
         </div>
         <div className="col-md-1 d-flex align-items-center justify-content-end">
-          <a href="#" className="text-end">
+          <a  className="text-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -47,7 +50,7 @@ export const Header = () => {
           <p className="fs-extra-small">+569 6660666</p>
         </div>
         <div className="col-md-1 d-flex align-items-center justify-content-end">
-          <a href="#" className="text-end">
+          <a  className="text-end">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

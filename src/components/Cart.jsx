@@ -14,22 +14,22 @@ export const Cart = () => {
       <h1 className="mb-4 text-center">Carrito de Compras</h1>
       {items.length > 0 ? (
         <>
-          <Button variant="danger" onClick={reset} className="mb-4 w-100 btn-sm">
+          <Button variant="danger" onClick={reset} className="mb-2 w-100 btn-sm">
             Vaciar Carrito
           </Button>
           <ListGroup variant="flush">
             {items.map((item, index) => (
-              <ListGroup.Item key={index} className="mb-3 p-3 shadow-sm rounded">
+              <ListGroup.Item key={index} className="mb-1 p-1 shadow-sm rounded">
                 <Row className="g-0">
                   <Col
                     md={4}
-                    className="d-flex align-items-center justify-content-center p-3"
+                    className="d-flex align-items-center justify-content-center p-1"
                   >
                     <img
                       src={item.imageid}
                       alt={item.titulo}
                       className="img-fluid rounded-start"
-                      style={{ maxHeight: "150px", objectFit: "cover" }}
+                      style={{ maxHeight: "200px", objectFit: "cover" }}
                     />
                   </Col>
                   <Col md={8}>
@@ -44,7 +44,7 @@ export const Cart = () => {
                         Categoría: {item.categoryid}
                       </Card.Text>
                       <Card.Text className="text-muted">
-                        Fecha seleccionada: {item.fechaSeleccionada}
+                        Fecha seleccionada: {item.selectedDate}
                       </Card.Text>
                       <Card.Text className="text-muted">
                         Cantidad: {item.quantity}
@@ -55,7 +55,7 @@ export const Cart = () => {
                       <Button
                         variant="danger"
                         size="sm"
-                        onClick={() => removeItem(item.id, item.fechaSeleccionada)}
+                        onClick={() => removeItem(item.id, item.selectedDate)} // Asegúrate de que se llama correctamente
                       >
                         Eliminar 1
                       </Button>
