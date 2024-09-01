@@ -17,38 +17,14 @@ export const NavBar = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link as={NavLink} to="#home">
+                <Nav.Link as={NavLink} to="/">
                   Inicio
                 </Nav.Link>
-                <Nav.Link as={NavLink} to="#link">
-                  Conócenos
-                </Nav.Link>
-                <NavDropdown title="Clases" id="basic-nav-dropdown">
-                  <NavDropdown.Item as={NavLink} to="#action/3.1">
-                    1 Clase
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={NavLink} to="#action/3.2">
-                    2 Clase
-                  </NavDropdown.Item>
-                  <NavDropdown.Item as={NavLink} to="#action/3.3">
-                    3 Clases
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item as={NavLink} to="#action/3.4">
-                    Clases Mensuales
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link as={NavLink} to="/categoria/Clase a Clase">
+                <Nav.Link as={NavLink} to="/categoria/ClaseaClase">
                   Clase a Clase
                 </Nav.Link>
-                <Nav.Link as={NavLink} to="/categoria/Mensual">
+                <Nav.Link as={NavLink} to="/categoria/Mensuales">
                   Clase Mensuales
-                </Nav.Link>
-                <Nav.Link as={NavLink} to="#link">
-                  Contáctanos
-                </Nav.Link>
-                <Nav.Link as={NavLink} to="#link">
-                  Términos y condiciones
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

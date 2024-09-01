@@ -8,14 +8,12 @@ const ItemList = ({ items }) => {
     <div className="d-flex">
       {items.map((i) => (
         <Card key={i.id} style={{ width: "18rem" }}>
-          <Card.Img
-            variant="top"
-            src={new URL(`${i.imagen}`, import.meta.url).href}
-          />
+          <Card.Img variant="top" src={i.imageid} />
           <Card.Body>
-            <Card.Title>{i.titulo}</Card.Title>
-            <Card.Text>{i.profesor}</Card.Text>
-            <Card.Text>{i.categoria}</Card.Text>
+            <Card.Title>{i.title}</Card.Title>
+            <Card.Title>{i.profesor}</Card.Title>
+            <Card.Text>{i.description}</Card.Text>
+            <Card.Text>{i.categoryid}</Card.Text>
             <Link to={`/item/${i.id}`}>
               <Button variant="primary">Ver</Button>
             </Link>
