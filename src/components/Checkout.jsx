@@ -1,17 +1,25 @@
 import { useState, useContext } from "react";
 import { ItemContext } from "../contexts/ItemContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, Alert } from "react-bootstrap";
 
 export const Checkout = () => {
   const { items, reset } = useContext(ItemContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+  const [validated, setValidated] = useState(false);
   const [orderId, setOrderId] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      setValidated(true);
+      return;
+    }
 
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
@@ -26,11 +34,11 @@ export const Checkout = () => {
         id: item.id,
         title: item.title,
         price: item.price,
-        quantity: 1, // Si no manejas cantidad, puedes cambiarlo
+        quantity: item.quantity,
         date: item.fechaSeleccionada,
       })),
       date: new Date(),
-      total: items.reduce((acc, item) => acc + item.price, 0),
+      total: items.reduce((acc, item) => acc + item.price * item.quantity, 0),
     };
 
     try {
@@ -38,7 +46,7 @@ export const Checkout = () => {
       setOrderId(docRef.id);
       reset(); // Vaciar el carrito
     } catch (error) {
-      console.error("Error al agregar la orden: ", error);
+      setError("Hubo un problema al procesar tu orden. Inténtalo de nuevo.");
     }
   };
 
@@ -46,48 +54,60 @@ export const Checkout = () => {
     <Container className="mt-4">
       <h1>Finalizar Compra</h1>
       {orderId ? (
-        <p>Gracias por tu compra! Tu número de orden es: <strong>{orderId}</strong></p>
+        <Alert variant="success">
+          ¡Gracias por tu compra! Tu número de orden es: <strong>{orderId}</strong>
+        </Alert>
       ) : (
-        <Form onSubmit={handleSubmit}>
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row>
             <Col md={6}>
-              <Form.Group className="mb-3">
+              <Form.Group controlId="name" className="mb-3">
                 <Form.Label>Nombre</Form.Label>
                 <Form.Control
+                  required
                   type="text"
                   placeholder="Ingresa tu nombre"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required
                 />
+                <Form.Control.Feedback type="invalid">
+                  Por favor, ingresa tu nombre.
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
             <Col md={6}>
-              <Form.Group className="mb-3">
+              <Form.Group controlId="email" className="mb-3">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
+                  required
                   type="email"
                   placeholder="Ingresa tu email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                 />
+                <Form.Control.Feedback type="invalid">
+                  Por favor, ingresa un correo electrónico válido.
+                </Form.Control.Feedback>
               </Form.Group>
             </Col>
           </Row>
-          <Form.Group className="mb-3">
+          <Form.Group controlId="address" className="mb-3">
             <Form.Label>Dirección</Form.Label>
             <Form.Control
+              required
               type="text"
               placeholder="Ingresa tu dirección"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              required
             />
+            <Form.Control.Feedback type="invalid">
+              Por favor, ingresa tu dirección.
+            </Form.Control.Feedback>
           </Form.Group>
           <Button variant="primary" type="submit">
             Confirmar Orden
           </Button>
+          {error && <Alert variant="danger" className="mt-3">{error}</Alert>}
         </Form>
       )}
     </Container>

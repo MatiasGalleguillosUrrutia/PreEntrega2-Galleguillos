@@ -11,7 +11,6 @@ export const ItemProvider = ({ children }) => {
     );
 
     if (existingItemIndex !== -1) {
-      // Si el producto ya existe en el carrito con la misma fecha, incrementa la cantidad
       const updatedItems = items.map((item, index) =>
         index === existingItemIndex
           ? { ...item, quantity: item.quantity + 1 }
@@ -19,15 +18,27 @@ export const ItemProvider = ({ children }) => {
       );
       setItems(updatedItems);
     } else {
-      // Si es un producto nuevo (diferente fecha o no existe en el carrito)
       setItems([...items, { ...newItem, quantity: 1 }]);
     }
+  };
+
+  const removeItem = (id, fechaSeleccionada) => {
+    const updatedItems = items.map((item) => {
+      if (item.id === id && item.fechaSeleccionada === fechaSeleccionada) {
+        if (item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+        return null; // Devuelve null si la cantidad es 1, lo que indica que se debe eliminar
+      }
+      return item;
+    }).filter(item => item !== null); // Elimina los productos con cantidad 0
+    setItems(updatedItems);
   };
 
   const reset = () => setItems([]);
 
   return (
-    <ItemContext.Provider value={{ items, addItem, reset }}>
+    <ItemContext.Provider value={{ items, addItem, removeItem, reset }}>
       {children}
     </ItemContext.Provider>
   );
